@@ -266,4 +266,5 @@ normaliseHeaders = Tag
     . map    (first CI.foldedCase)
     . nubBy  ((==)    `on` fst)
     . sortBy (compare `on` fst)
+    . filter ((/= "expect") . fst)
     . filter ((/= "authorization") . fst)
